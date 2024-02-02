@@ -1,20 +1,17 @@
-export default function BlogPostCategories() {
+import { BlogPostCategoryType } from '@/lib/Types/BlogPost/BlogPostCategoryType/BlogPostCategoryType';
+
+type BlogPostCategoriesProps = {
+  categories: BlogPostCategoryType[];
+};
+
+export default function BlogPostCategories({
+  categories,
+}: BlogPostCategoriesProps) {
   return (
     <div>
-      <div>
-        <span>Categories:</span>
-        <ul>
-          <li>
-            <a href="/categories/tech">Tech</a>
-          </li>
-          <li>
-            <a href="/categories/javascript">JavaScript</a>
-          </li>
-          <li>
-            <a href="/categories/react">React</a>
-          </li>
-        </ul>
-      </div>
+      {categories.map(category => (
+        <div key={category}>{category}</div>
+      ))}
     </div>
   );
 }

@@ -1,7 +1,7 @@
-import { BlogPostBody } from '@/lib/Types/BlogPost/BlogPostBody/BlogPostBody';
+import { BlogPostBodyType } from '@/lib/Types/BlogPost/BlogPostBodyType/BlogPostBodyType';
 
 type BlogPostBodyProps = {
-  body: BlogPostBody;
+  body: BlogPostBodyType;
 };
 
 export default function BlogPostBody({ body }: BlogPostBodyProps) {

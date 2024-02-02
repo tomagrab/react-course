@@ -1,8 +1,13 @@
-export default function BlogPostTitle() {
+import { BlogPostTitleType } from '@/lib/Types/BlogPost/BlogPostTitleType/BlogPostTitleType';
+
+type BlogPostTitleProps = {
+  title: BlogPostTitleType;
+};
+
+export default function BlogPostTitle({ title }: BlogPostTitleProps) {
   return (
     <div>
-      <h2>My Blog Post Title</h2>
-      <p>Published on 2021-01-01</p>
+      <h2>{title}</h2>
     </div>
   );
 }
