@@ -7,6 +7,7 @@ type BlogPostTagsProps = {
 export default function BlogPostTags({ tags }: BlogPostTagsProps) {
   return (
     <div>
+      <h3 className={`text-lg font-bold`}>Tags</h3>
       {tags.map(tag => (
         <div key={tag}>{tag}</div>
       ))}

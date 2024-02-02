@@ -10,11 +10,15 @@ type BlogPostProps = {
 
 export default function BlogPost({ blogPost }: BlogPostProps) {
   return (
-    <div>
-      <BlogPostTitle title={blogPost.title} />
-      <BlogPostCategories categories={blogPost.categories} />
-      <BlogPostTags tags={blogPost.tags} />
-      <BlogPostBody body={blogPost.body} />
+    <div className={`flex justify-between`}>
+      <div className={`flex flex-col gap-2`}>
+        <BlogPostTitle title={blogPost.title} />
+        <BlogPostBody body={blogPost.body} />
+      </div>
+      <div className={`flex flex-col gap-2`}>
+        <BlogPostCategories categories={blogPost.categories} />
+        <BlogPostTags tags={blogPost.tags} />
+      </div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ const BlogPosts: BlogPostType[] = [
 export default function Home() {
   return (
     <Layout>
-      <Main>
+      <Main className={`flex flex-col gap-4`}>
         {BlogPosts.map((blogPost, index) => (
           <BlogPost key={index} blogPost={blogPost} />
         ))}

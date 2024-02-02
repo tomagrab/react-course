@@ -7,7 +7,7 @@ type BlogPostTitleProps = {
 export default function BlogPostTitle({ title }: BlogPostTitleProps) {
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 className={`text-xl font-bold`}>{title}</h2>
     </div>
   );
 }

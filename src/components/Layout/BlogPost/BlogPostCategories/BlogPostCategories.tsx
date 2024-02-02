@@ -9,6 +9,7 @@ export default function BlogPostCategories({
 }: BlogPostCategoriesProps) {
   return (
     <div>
+      <h3 className={`text-lg font-bold`}>Categories</h3>
       {categories.map(category => (
         <div key={category}>{category}</div>
       ))}
