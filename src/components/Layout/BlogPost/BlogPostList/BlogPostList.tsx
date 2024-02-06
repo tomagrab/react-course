@@ -1,22 +1,23 @@
 import { BlogPostType } from '@/lib/Types/BlogPost/BlogPostType';
 import BlogPost from '@/components/Layout/BlogPost/BlogPost';
+import { Link } from 'react-router-dom';
 
 type BlogPostListProps = {
   BlogPosts: BlogPostType[];
-  handleDelete: (id: number) => void;
 };
 
-export default function BlogPostList({
-  BlogPosts,
-  handleDelete,
-}: BlogPostListProps) {
+export default function BlogPostList({ BlogPosts }: BlogPostListProps) {
   return (
-    <>
+    <div className={`flex flex-col gap-4 `}>
       {BlogPosts.map(BlogPostContent => (
-        <div key={BlogPostContent.id} className={`flex flex-col gap-4`}>
-          <BlogPost blogPost={BlogPostContent} handleDelete={handleDelete} />
-        </div>
+        <Link
+          key={BlogPostContent.id}
+          to={`/blogs/${BlogPostContent.id}`}
+          className={`rounded transition duration-300 ease-in-out hover:scale-95 hover:bg-slate-200`}
+        >
+          <BlogPost blogPost={BlogPostContent} />
+        </Link>
       ))}
-    </>
+    </div>
   );
 }
